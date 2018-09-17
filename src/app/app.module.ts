@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { NgcontentComponent } from './ngcontent/ngcontent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    NgcontentComponent
   ],
   imports: [
     BrowserModule,
