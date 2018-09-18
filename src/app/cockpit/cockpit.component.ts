@@ -1,11 +1,11 @@
-import { Component, OnInit, EventEmitter, Output, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewEncapsulation, ViewChild, ElementRef, OnChanges, DoCheck, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
   templateUrl: './cockpit.component.html',
   styleUrls: ['./cockpit.component.css']
 })
-export class CockpitComponent implements OnInit {
+export class CockpitComponent implements OnInit, OnChanges, DoCheck, AfterContentInit {
 
   @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
   @Output('bpCreated') blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
@@ -13,11 +13,30 @@ export class CockpitComponent implements OnInit {
   //newServerName = '';
   //newServerContent = '';
 
+  boundProp: string;
+
   @ViewChild('serverContentInput') srvContentInput : ElementRef;
 
-  constructor() { }
+  constructor() { 
+    // console.log('CockpitComponent::constructor called');
+  }
 
   ngOnInit() {
+    // console.log('CockpitComponent::ngOnInit called');
+  }
+
+  
+  ngOnChanges() {
+    // console.log('CockpitComponent::ngOnChanges called');
+  }
+
+  ngDoCheck() {
+    // console.log('CockpitComponent::ngDoCheck called');
+  }
+
+  ngAfterContentInit()
+  {
+    // console.log('CockpitComponent::ngAfterContentInit called');
   }
 
   // onAddServer(serverNameLocalRefValue: string) {
